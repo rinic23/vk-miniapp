@@ -11,4 +11,18 @@
     <div>Hello world</div>
     asd
 </body>
+<script>
+    console.log('init')
+</script>
+<script src="./package/dist/iife/index.min.js"></script>
+<script>
+    console.log('init2')
+    window.VKTBridge.send('LoadingCompleted', { ok: true })
+        .then((bridgeResponse) => {
+            console.log({ bridgeResponse });
+        })
+        .catch((bridgeError) => {
+            console.log({ bridgeError });
+        });
+</script>
 </html>
